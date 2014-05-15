@@ -90,10 +90,13 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-
-colorscheme lucius
-LuciusLight
-"colorscheme jellybeans
+if has('mac')
+    colorscheme lucius
+    LuciusLight
+    "colorscheme jellybeans
+elseif has('unix')
+    colorscheme solarized
+endif
 
 if has("gui_running")
     set guifont=Sauce_Code_Powerline:h18
@@ -112,9 +115,11 @@ au FileType make setlocal noexpandtab
 au BufNewFile,BufRead *.tex setlocal spell
 
 " Airline stuff
+let g:airline_theme = 'bubblegum'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
+
 
 " These map the function navigation motions to use end-of-line braces
 map [[ ?{<CR>w99[{
