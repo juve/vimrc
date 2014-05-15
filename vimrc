@@ -96,7 +96,7 @@ if s:uname == "Darwin\n"
     colorscheme lucius
     LuciusLight
 else
-    colorscheme solarized
+    colorscheme default
 endif
 
 if has("gui_running")
