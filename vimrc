@@ -90,11 +90,12 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-if has('mac')
+let s:uname = system("uname -s")
+if s:uname == "Darwin\n"
+    " On OSX I use lucius
     colorscheme lucius
     LuciusLight
-    "colorscheme jellybeans
-elseif has('unix')
+else
     colorscheme solarized
 endif
 
