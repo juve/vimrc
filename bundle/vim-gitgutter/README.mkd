@@ -7,7 +7,7 @@ Features:
 * Shows signs for added, modified, and removed lines.
 * Ensures signs are always as up to date as possible (but without running more than necessary).
 * Quick jumping between blocks of changed lines ("hunks").
-* Stage/revert individual hunks.
+* Stage/revert/preview individual hunks.
 * Optional line highlighting.
 * Fully customisable (signs, sign column, line highlights, mappings, extra git-diff arguments, etc).
 * Can be toggled on/off.
@@ -43,10 +43,10 @@ git clone git://github.com/airblade/vim-gitgutter.git
 
 Or for [Vundle](https://github.com/gmarik/vundle) users:
 
-Add `Bundle 'airblade/vim-gitgutter'` to your `~/.vimrc` and then:
+Add `Plugin 'airblade/vim-gitgutter'` to your `~/.vimrc` and then:
 
-* either within Vim: `:BundleInstall`
-* or in your shell: `vim +BundleInstall +qall`
+* either within Vim: `:PluginInstall`
+* or in your shell: `vim +PluginInstall +qall`
 
 
 ### Usage
@@ -101,6 +101,12 @@ To set your own mappings for these, for example if you prefer the mnemonics hunk
 ```viml
 nmap <Leader>ha <Plug>GitGutterStageHunk
 nmap <Leader>hu <Plug>GitGutterRevertHunk
+```
+
+And you can preview a hunk's changes with `<Leader>hp`.  You can of course change this mapping, e.g:
+
+```viml
+nmap <Leader>hv <Plug>GitGutterPreviewHunk
 ```
 
 If you don't want vim-gitgutter to set up any mappings at all, use this:
@@ -286,12 +292,13 @@ Here are some things you can check:
 
 ### Shameless Plug
 
-If this plugin has helped you, or you'd like to learn more about Vim, why not check out these two screencasts I wrote for PeepCode:
+If this plugin has helped you, or you'd like to learn more about Vim, why not check out this screencast I wrote for PeepCode:
 
-* [Smash Into Vim I][siv1]
-* [Smash Into Vim II][siv2]
+* [Smash Into Vim][siv]
 
-You can read reviews at PeepCode and also on my [portfolio][].
+This was one of PeepCode's all-time top three bestsellers and is now available at Pluralsight.
+
+You can read reviews on my [website][airblade].
 
 
 ### Intellectual Property
@@ -300,7 +307,6 @@ Copyright Andrew Stewart, AirBlade Software Ltd.  Released under the MIT licence
 
 
   [pathogen]: https://github.com/tpope/vim-pathogen
-  [siv1]: https://peepcode.com/products/smash-into-vim-i
-  [siv2]: https://peepcode.com/products/smash-into-vim-ii
-  [portfolio]: http://airbladesoftware.com/portfolio#vim
+  [siv]: http://pluralsight.com/training/Courses/TableOfContents/smash-into-vim
+  [airblade]: http://airbladesoftware.com/peepcode-vim
   [macvim]: http://code.google.com/p/macvim/
