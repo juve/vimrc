@@ -91,12 +91,14 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-let s:uname = system("uname -s")
-if s:uname == "Darwin\n"
-    " On OSX I use lucius
-    "colorscheme lucius
-    "LuciusLight
+let s:os = system("uname -s")
+let s:nn = system("uname -n")
+if s:os == "Darwin\n"
     colorscheme solarized
+elseif s:nn == "gjuve-z640\n"
+    let &t_Co=256
+    colorscheme solarized
+    set background=dark
 else
     colorscheme default
 endif
@@ -131,6 +133,9 @@ map ][ /}<CR>b99]}
 map ]] j0[[%/{<CR>
 map [] k$][%?}<CR>
 
+" CtrlP
+"let g:ctrlp_map = '<c-p>'
+"let g:ctrlp_cmd = 'CtrlP'
 "let g:ctrlp_custom_ignore = {
 "    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
 "    \ 'file': '\v\.(exe|so|dll|pyc)$',
@@ -140,3 +145,4 @@ map [] k$][%?}<CR>
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.jar,*.gif,*.png,*.jpg
 
 map <C-n> :NERDTreeToggle<CR>
+
