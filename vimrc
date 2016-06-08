@@ -94,8 +94,9 @@ nnoremap <C-l> <C-w>l
 let s:uname = system("uname -s")
 if s:uname == "Darwin\n"
     " On OSX I use lucius
-    colorscheme lucius
-    LuciusLight
+    "colorscheme lucius
+    "LuciusLight
+    colorscheme solarized
 else
     colorscheme default
 endif
@@ -130,3 +131,12 @@ map ][ /}<CR>b99]}
 map ]] j0[[%/{<CR>
 map [] k$][%?}<CR>
 
+"let g:ctrlp_custom_ignore = {
+"    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+"    \ 'file': '\v\.(exe|so|dll|pyc)$',
+"    \ }
+
+" This makes command-t and ctrlp work better
+set wildignore=*.swp,*.bak,*.pyc,*.class,*.jar,*.gif,*.png,*.jpg
+
+map <C-n> :NERDTreeToggle<CR>
